@@ -1,0 +1,33 @@
+[
+    {
+        "username": "Bob River",
+        "imageName": "human1",
+        "lastMessage": "How are you?",
+        "id": 1
+    },
+    {
+        "username": "John Black",
+        "imageName": "human2",
+        "lastMessage": "Where are you?",
+        "id": 2
+    },
+    {
+        "username": "Misha Red",
+        "imageName": "human3",
+        "lastMessage": "Who are you?",
+        "id": 3
+    },
+    {
+        "username": "Alex Film",
+        "imageName": "human4",
+        "lastMessage": "How old are you?",
+        "id": 4
+    },
+    {
+        "username": "Robert Martin",
+        "imageName": "human5",
+        "lastMessage": "Where are we?",
+        "id": 5
+    }
+]
+
