@@ -67,8 +67,8 @@ class ListViewController: UIViewController {
         collectionView.backgroundColor = .mainWhite()
         view.addSubview(collectionView)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId2")
+        collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reuseId)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "waitingCellId")
     }
     
     private func reloadData() {
@@ -83,6 +83,16 @@ class ListViewController: UIViewController {
 
 // MARK: - Data Source
 extension ListViewController {
+    
+    private func configure<T: SelfConfiguringCell>(cellType: T.Type, with value: MChat, for indexPath: IndexPath) -> T {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseId, for: indexPath) as? T else {
+            fatalError("Unabel to dequeue \(cellType)")
+        }
+        
+        cell.configure(with: value)
+        return cell
+    }
+    
     private func createDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, MChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
             guard let section = Section(rawValue: indexPath.section) else {
@@ -91,11 +101,10 @@ extension ListViewController {
             
             switch section {
             case .activeChats:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
-                cell.backgroundColor = .systemBlue
+                let cell = self.configure(cellType: ActiveChatCell.self, with: chat, for: indexPath)
                 return cell
             case .waitingChats:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId2", for: indexPath)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "waitingCellId", for: indexPath)
                 cell.backgroundColor = .systemRed
                 return cell
             }

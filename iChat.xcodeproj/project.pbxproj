@@ -11,6 +11,8 @@
 		5B1206B324004A5E00D37A9D /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1206B224004A5E00D37A9D /* OneLineTextField.swift */; };
 		5B1206B52400555B00D37A9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1206B42400555B00D37A9D /* LoginViewController.swift */; };
 		5B5696792405709C0053FD65 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5696782405709C0053FD65 /* Bundle+Extension.swift */; };
+		5B56967C24058CB10053FD65 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B56967B24058CB10053FD65 /* ActiveChatCell.swift */; };
+		5B56967E2405965A0053FD65 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B56967D2405965A0053FD65 /* GradientView.swift */; };
 		5B82563C23FDA17600A4B219 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82563B23FDA17600A4B219 /* AppDelegate.swift */; };
 		5B82563E23FDA17600A4B219 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82563D23FDA17600A4B219 /* SceneDelegate.swift */; };
 		5B82564023FDA17600A4B219 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82563F23FDA17600A4B219 /* AuthViewController.swift */; };
@@ -38,6 +40,8 @@
 		5B1206B224004A5E00D37A9D /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		5B1206B42400555B00D37A9D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5B5696782405709C0053FD65 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		5B56967B24058CB10053FD65 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
+		5B56967D2405965A0053FD65 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		5B82563823FDA17600A4B219 /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B82563B23FDA17600A4B219 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B82563D23FDA17600A4B219 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B56967A24058C9D0053FD65 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5B56967B24058CB10053FD65 /* ActiveChatCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		5B82562F23FDA17600A4B219 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +110,7 @@
 				5BB00DAD23FDB2CC0043EC28 /* ButtonFormView.swift */,
 				5B1206B224004A5E00D37A9D /* OneLineTextField.swift */,
 				5BECC95D24042CF900089FC0 /* AddPhotoView.swift */,
+				5B56967D2405965A0053FD65 /* GradientView.swift */,
 				5BECC9692405701200089FC0 /* activeChats.json */,
 				5BECC9682405701200089FC0 /* waitingChats.json */,
 				5B82565A23FDB06B00A4B219 /* Extensions */,
@@ -134,6 +147,7 @@
 		5BECC96324043DCA00089FC0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5B56967A24058C9D0053FD65 /* Cell */,
 				5B82563F23FDA17600A4B219 /* AuthViewController.swift */,
 				5BECC96124043B8A00089FC0 /* ListViewController.swift */,
 				5B1206B42400555B00D37A9D /* LoginViewController.swift */,
@@ -217,10 +231,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B56967E2405965A0053FD65 /* GradientView.swift in Sources */,
 				5BECC96224043B8A00089FC0 /* ListViewController.swift in Sources */,
 				5BECC9602404338200089FC0 /* SegmentedControl+Extension.swift in Sources */,
 				5BECC96524043E0900089FC0 /* MainTabBarController.swift in Sources */,
 				5B1206B324004A5E00D37A9D /* OneLineTextField.swift in Sources */,
+				5B56967C24058CB10053FD65 /* ActiveChatCell.swift in Sources */,
 				5B1206B12400474100D37A9D /* SignUpViewController.swift in Sources */,
 				5BECC96724043E4400089FC0 /* PeopleViewController.swift in Sources */,
 				5B82564023FDA17600A4B219 /* AuthViewController.swift in Sources */,
