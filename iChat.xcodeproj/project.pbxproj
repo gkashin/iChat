@@ -15,6 +15,10 @@
 		5B56967E2405965A0053FD65 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B56967D2405965A0053FD65 /* GradientView.swift */; };
 		5B56968224059CE00053FD65 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B56968124059CE00053FD65 /* WaitingChatCell.swift */; };
 		5B56968424059EF60053FD65 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B56968324059EF60053FD65 /* SelfConfiguringCell.swift */; };
+		5B5696872406B4870053FD65 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5696862406B4870053FD65 /* SectionHeader.swift */; };
+		5B5696892406BAD70053FD65 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B5696882406BAD60053FD65 /* users.json */; };
+		5B56968C2406BBAF0053FD65 /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B56968B2406BBAF0053FD65 /* MUser.swift */; };
+		5B56968E2406BBC00053FD65 /* MChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B56968D2406BBC00053FD65 /* MChat.swift */; };
 		5B82563C23FDA17600A4B219 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82563B23FDA17600A4B219 /* AppDelegate.swift */; };
 		5B82563E23FDA17600A4B219 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82563D23FDA17600A4B219 /* SceneDelegate.swift */; };
 		5B82564023FDA17600A4B219 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82563F23FDA17600A4B219 /* AuthViewController.swift */; };
@@ -46,6 +50,10 @@
 		5B56967D2405965A0053FD65 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		5B56968124059CE00053FD65 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		5B56968324059EF60053FD65 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
+		5B5696862406B4870053FD65 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		5B5696882406BAD60053FD65 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		5B56968B2406BBAF0053FD65 /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
+		5B56968D2406BBC00053FD65 /* MChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MChat.swift; sourceTree = "<group>"; };
 		5B82563823FDA17600A4B219 /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B82563B23FDA17600A4B219 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B82563D23FDA17600A4B219 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +106,23 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		5B56968A2406BB1D0053FD65 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				5B5696862406B4870053FD65 /* SectionHeader.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		5B56968F2406BBFA0053FD65 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B56968B2406BBAF0053FD65 /* MUser.swift */,
+				5B56968D2406BBC00053FD65 /* MChat.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5B82562F23FDA17600A4B219 = {
 			isa = PBXGroup;
 			children = (
@@ -120,8 +145,10 @@
 				5BECC9692405701200089FC0 /* activeChats.json */,
 				5BECC95D24042CF900089FC0 /* AddPhotoView.swift */,
 				5B82563B23FDA17600A4B219 /* AppDelegate.swift */,
+				5B5696882406BAD60053FD65 /* users.json */,
 				5B82564423FDA17C00A4B219 /* Assets.xcassets */,
 				5BB00DAD23FDB2CC0043EC28 /* ButtonFormView.swift */,
+				5B56968F2406BBFA0053FD65 /* Models */,
 				5BECC96324043DCA00089FC0 /* Controllers */,
 				5B82565A23FDB06B00A4B219 /* Extensions */,
 				5B56967D2405965A0053FD65 /* GradientView.swift */,
@@ -161,6 +188,7 @@
 		5BECC96324043DCA00089FC0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5B56968A2406BB1D0053FD65 /* Header */,
 				5B56967A24058C9D0053FD65 /* Cell */,
 				5B82563F23FDA17600A4B219 /* AuthViewController.swift */,
 				5BECC96124043B8A00089FC0 /* ListViewController.swift */,
@@ -231,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B5696892406BAD70053FD65 /* users.json in Resources */,
 				5BECC96A2405701200089FC0 /* waitingChats.json in Resources */,
 				5B82564823FDA17C00A4B219 /* LaunchScreen.storyboard in Resources */,
 				5B82564523FDA17C00A4B219 /* Assets.xcassets in Resources */,
@@ -245,11 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B56968E2406BBC00053FD65 /* MChat.swift in Sources */,
 				5B56967E2405965A0053FD65 /* GradientView.swift in Sources */,
 				5BECC96224043B8A00089FC0 /* ListViewController.swift in Sources */,
+				5B5696872406B4870053FD65 /* SectionHeader.swift in Sources */,
 				5BECC9602404338200089FC0 /* SegmentedControl+Extension.swift in Sources */,
 				5BECC96524043E0900089FC0 /* MainTabBarController.swift in Sources */,
 				5B1206B324004A5E00D37A9D /* OneLineTextField.swift in Sources */,
+				5B56968C2406BBAF0053FD65 /* MUser.swift in Sources */,
 				5B56967C24058CB10053FD65 /* ActiveChatCell.swift in Sources */,
 				5B1206B12400474100D37A9D /* SignUpViewController.swift in Sources */,
 				5BECC96724043E4400089FC0 /* PeopleViewController.swift in Sources */,

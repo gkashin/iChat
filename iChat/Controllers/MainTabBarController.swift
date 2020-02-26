@@ -24,8 +24,8 @@ class MainTabBarController: UITabBarController {
         let conversationImage = UIImage(systemName: "bubble.left.and.bubble.right", withConfiguration: boldConfig)!
         
         viewControllers = [
+            generateNavigationController(rootViewController: peopleViewController, title: "People", image: peopleImage),
             generateNavigationController(rootViewController: listViewContoller, title: "Conversations", image: conversationImage),
-            generateNavigationController(rootViewController: peopleViewController, title: "People", image: peopleImage)
         ]
     }
     
