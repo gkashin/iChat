@@ -32,7 +32,7 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         containerView.layer.cornerRadius = 4
-        clipsToBounds = true
+        containerView.clipsToBounds = true
     }
     
     func configure<U>(with value: U) where U : Hashable {

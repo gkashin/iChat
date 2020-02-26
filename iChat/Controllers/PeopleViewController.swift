@@ -80,7 +80,6 @@ extension PeopleViewController {
             switch section {
             case .users:
                 let cell = self.configure(collectionView: collectionView, cellType: UserCell.self, with: user, for: indexPath)
-                cell.backgroundColor = .blue
                 return cell
             }
         })
