@@ -103,7 +103,7 @@ extension ListViewController {
                 fatalError("Unknown section kind")
             }
             
-            sectionHeader.configurate(text: section.description(), font: .laoSangamMN20()!, textColor: #colorLiteral(red: 0.5725490196, green: 0.5725490196, blue: 0.5725490196, alpha: 1))
+            sectionHeader.configure(text: section.description(), font: .laoSangamMN20()!, textColor: #colorLiteral(red: 0.5725490196, green: 0.5725490196, blue: 0.5725490196, alpha: 1))
             return sectionHeader
         }
     }
