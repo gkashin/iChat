@@ -23,7 +23,7 @@ struct MUser: Hashable, Decodable {
     
     func contains(filter: String?) -> Bool {
         guard let filter = filter else { return true }
-        if !filter.isEmpty { return true }
+        if filter.isEmpty { return true }
         
         let lowercasedFilter = filter.lowercased()
         return username.lowercased().contains(lowercasedFilter)
