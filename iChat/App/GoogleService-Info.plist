@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>979260799881-kg75c7rkfh3r2ls02lupbvv1oiji3pr8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.979260799881-kg75c7rkfh3r2ls02lupbvv1oiji3pr8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDOHNb-aLvWzH1irbRR_74l_YRdYRxv4nw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>979260799881</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.gkashin.iChat</string>
+	<key>PROJECT_ID</key>
+	<string>ichat-a2c91</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ichat-a2c91.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:979260799881:ios:43ca8bfd23b3271b3f3f58</string>
+	<key>DATABASE_URL</key>
+	<string>https://ichat-a2c91.firebaseio.com</string>
+</dict>
+</plist>
