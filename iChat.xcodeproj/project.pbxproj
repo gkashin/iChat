@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,7 @@
 		5B5696992407F7F40053FD65 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5696982407F7F40053FD65 /* UIView+Extension.swift */; };
 		5B56969B2407FDDC0053FD65 /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B56969A2407FDDC0053FD65 /* ChatRequestViewController.swift */; };
 		5B5696A224080AC90053FD65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B5696A124080AC90053FD65 /* GoogleService-Info.plist */; };
+		5B5696A524095B160053FD65 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5696A424095B160053FD65 /* AuthService.swift */; };
 		5B82563C23FDA17600A4B219 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82563B23FDA17600A4B219 /* AppDelegate.swift */; };
 		5B82563E23FDA17600A4B219 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82563D23FDA17600A4B219 /* SceneDelegate.swift */; };
 		5B82564023FDA17600A4B219 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82563F23FDA17600A4B219 /* AuthViewController.swift */; };
@@ -68,6 +69,7 @@
 		5B5696982407F7F40053FD65 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		5B56969A2407FDDC0053FD65 /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 		5B5696A124080AC90053FD65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5B5696A424095B160053FD65 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5B82563823FDA17600A4B219 /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B82563B23FDA17600A4B219 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B82563D23FDA17600A4B219 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,14 @@
 			path = JSONs;
 			sourceTree = "<group>";
 		};
+		5B5696A324095AF50053FD65 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5B5696A424095B160053FD65 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		5B82562F23FDA17600A4B219 = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +233,7 @@
 				5B56968F2406BBFA0053FD65 /* Models */,
 				5B56968524059F010053FD65 /* Protocols */,
 				5B56969C240803250053FD65 /* Resources */,
+				5B5696A324095AF50053FD65 /* Services */,
 				5B56969E240803620053FD65 /* Views */,
 			);
 			path = iChat;
@@ -280,7 +291,6 @@
 				947A38BFB2DA5D639C0954E9 /* Pods-iChat.debug.xcconfig */,
 				637E1436D637D4FBDC5E8B61 /* Pods-iChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -432,6 +442,7 @@
 				5B82565423FDAAE900A4B219 /* UIColor+Extension.swift in Sources */,
 				5B82565223FDA9FD00A4B219 /* UIFont+Extension.swift in Sources */,
 				5B82563E23FDA17600A4B219 /* SceneDelegate.swift in Sources */,
+				5B5696A524095B160053FD65 /* AuthService.swift in Sources */,
 				5B1206B52400555B00D37A9D /* LoginViewController.swift in Sources */,
 				5BB00DB023FDB76D0043EC28 /* UIStackView+Extension.swift in Sources */,
 			);
