@@ -31,35 +31,35 @@ class SignUpViewController: UIViewController {
         return button
     }()
     
+    weak var delegate: AuthNavigatingDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         setupConstraints()
         
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func loginButtonTapped() {
+        dismiss(animated: true) {
+            self.delegate?.toLoginVC()
+        }
     }
     
     @objc private func signUpButtonTapped() {
         AuthService.shared.register(email: emailTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text) { result in
             switch result {
-            case .success(let user):
-                self.showAlert(with: "Success!", and: "You are registered!")
-                print(user.email)
+            case .success(_):
+                self.showAlert(with: "Success!", and: "You are registered!") {
+                    self.present(SetupProfileViewController(), animated: true)
+                }
             case .failure(let error):
                 self.showAlert(with: "Error!", and: error.localizedDescription)
             }
         }
-    }
-}
-
-extension UIViewController {
-    func showAlert(with title: String, and message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        
-        present(alertController, animated: true)
     }
 }
 
