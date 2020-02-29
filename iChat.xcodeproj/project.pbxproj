@@ -39,6 +39,8 @@
 		5B82565623FDACD200A4B219 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82565523FDACD200A4B219 /* UILabel+Extension.swift */; };
 		5B82565823FDADAC00A4B219 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82565723FDADAC00A4B219 /* UIImageView+Extension.swift */; };
 		5B979D3124098A9D008BADB3 /* AuthNavigatingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B979D3024098A9D008BADB3 /* AuthNavigatingDelegate.swift */; };
+		5B979D33240A9ADD008BADB3 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B979D32240A9ADD008BADB3 /* FirestoreService.swift */; };
+		5B979D35240A9DFF008BADB3 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B979D34240A9DFF008BADB3 /* UserError.swift */; };
 		5BB00DAE23FDB2CC0043EC28 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB00DAD23FDB2CC0043EC28 /* ButtonFormView.swift */; };
 		5BB00DB023FDB76D0043EC28 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB00DAF23FDB76D0043EC28 /* UIStackView+Extension.swift */; };
 		5BECC95C24042B6300089FC0 /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BECC95B24042B6300089FC0 /* SetupProfileViewController.swift */; };
@@ -87,6 +89,8 @@
 		5B82565523FDACD200A4B219 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		5B82565723FDADAC00A4B219 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		5B979D3024098A9D008BADB3 /* AuthNavigatingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigatingDelegate.swift; sourceTree = "<group>"; };
+		5B979D32240A9ADD008BADB3 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		5B979D34240A9DFF008BADB3 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		5BB00DAD23FDB2CC0043EC28 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
 		5BB00DAF23FDB76D0043EC28 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		5BECC95B24042B6300089FC0 /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				5B5696A424095B160053FD65 /* AuthService.swift */,
+				5B979D32240A9ADD008BADB3 /* FirestoreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 			children = (
 				5B5696A82409654A0053FD65 /* AuthError.swift */,
 				5B5696A6240963A80053FD65 /* Validators.swift */,
+				5B979D34240A9DFF008BADB3 /* UserError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -443,6 +449,7 @@
 				5B5696972407F5000053FD65 /* InsertableTextField.swift in Sources */,
 				5B1206B12400474100D37A9D /* SignUpViewController.swift in Sources */,
 				5BECC96724043E4400089FC0 /* PeopleViewController.swift in Sources */,
+				5B979D33240A9ADD008BADB3 /* FirestoreService.swift in Sources */,
 				5B5696952406ECEA0053FD65 /* ProfileViewController.swift in Sources */,
 				5B82564023FDA17600A4B219 /* AuthViewController.swift in Sources */,
 				5B56969B2407FDDC0053FD65 /* ChatRequestViewController.swift in Sources */,
@@ -450,6 +457,7 @@
 				5BECC95C24042B6300089FC0 /* SetupProfileViewController.swift in Sources */,
 				5B82565823FDADAC00A4B219 /* UIImageView+Extension.swift in Sources */,
 				5B5696992407F7F40053FD65 /* UIView+Extension.swift in Sources */,
+				5B979D35240A9DFF008BADB3 /* UserError.swift in Sources */,
 				5BB00DAE23FDB2CC0043EC28 /* ButtonFormView.swift in Sources */,
 				5B5696792405709C0053FD65 /* Bundle+Extension.swift in Sources */,
 				5BECC95E24042CF900089FC0 /* AddPhotoView.swift in Sources */,
