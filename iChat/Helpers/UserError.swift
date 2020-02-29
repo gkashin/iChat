@@ -11,6 +11,8 @@ import Foundation
 enum UserError {
     case notFilled
     case photoNotExist
+    case cannotGetUserInfo
+    case cannotUnwrapToMUser
 }
 
 extension UserError: LocalizedError {
@@ -20,6 +22,10 @@ extension UserError: LocalizedError {
             return NSLocalizedString("Fill in all the fields", comment: "")
         case .photoNotExist:
             return NSLocalizedString("User didn't choose the photo", comment: "") 
+        case .cannotGetUserInfo:
+            return NSLocalizedString("It's impossible to get the data about User from Firebase", comment: "") 
+        case .cannotUnwrapToMUser:
+            return NSLocalizedString("It's impossible to convert MUser from User", comment: "")
         }
     }
 }

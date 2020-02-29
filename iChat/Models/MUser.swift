@@ -6,6 +6,7 @@
 //  Copyright © 2020 Georgii Kashin. All rights reserved.
 //
 
+import FirebaseFirestore
 import UIKit
 
 struct MUser: Hashable, Decodable {
@@ -24,6 +25,32 @@ struct MUser: Hashable, Decodable {
         rep["description"] = description
         rep["sex"] = sex
         return rep
+    }
+    
+    init(id: String, email: String, username: String, imageName: String, description: String, sex: String) {
+        self.id = id
+        self.email = email
+        self.username = username
+        self.imageName = imageName
+        self.description = description
+        self.sex = sex
+    }
+    
+    init?(document: DocumentSnapshot) {
+        guard let data = document.data() else { return nil }
+        guard let id = data["uid"] as? String,
+            let email = data["username"] as? String,
+            let username = data["email"] as? String,
+            let imageName = data["imageName"] as? String,
+            let description = data["description"] as? String,
+            let sex = data["sex"] as? String else { return nil }
+        
+        self.id = id
+        self.email = email
+        self.username = username
+        self.imageName = imageName
+        self.description = description
+        self.sex = sex
     }
     
     func hash(into hasher: inout Hasher) {

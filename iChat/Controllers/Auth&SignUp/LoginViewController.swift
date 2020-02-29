@@ -49,9 +49,16 @@ class LoginViewController: UIViewController {
     @objc private func loginButtonTapped() {
         AuthService.shared.login(email: emailTextField.text, password: passwordTextField.text) { result in
             switch result {
-            case .success(_):
+            case .success(let user):
                 self.showAlert(with: "Success!", and: "You are logged in!") {
-                    self.present(MainTabBarController(), animated: true)
+                    FirestoreService.shared.getUserData(user: user) { result in
+                        switch result {
+                        case .success(_):
+                            self.present(MainTabBarController(), animated: true)
+                        case .failure(_):
+                            self.present(SetupProfileViewController(currentUser: user), animated: true)
+                        }
+                    }
                 }
             case .failure(let error):
                 self.showAlert(with: "Error!", and: error.localizedDescription)
