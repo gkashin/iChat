@@ -31,6 +31,12 @@ class SetupProfileViewController: UIViewController {
     init(currentUser: User) {        
         self.currentUser = currentUser
         super.init(nibName: nil, bundle: nil)
+        
+        if let username = currentUser.displayName {
+            fullNameTextField.text = username
+        }
+        
+        // TODO: - Set Google Image
     }
     
     required init?(coder: NSCoder) {
@@ -51,7 +57,7 @@ class SetupProfileViewController: UIViewController {
             id: currentUser.uid,
             email: currentUser.email!,
             username: fullNameTextField.text,
-            imageName: nil,
+            avatarImage: fullImageView.circleImageView.image,
             description: aboutMeTextField.text,
             sex: sexSegmentedControl.titleForSegment(at: sexSegmentedControl.selectedSegmentIndex)) { result in
                 switch result {
