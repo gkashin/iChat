@@ -39,8 +39,8 @@ struct MUser: Hashable, Decodable {
     init?(document: DocumentSnapshot) {
         guard let data = document.data() else { return nil }
         guard let id = data["uid"] as? String,
-            let email = data["username"] as? String,
-            let username = data["email"] as? String,
+            let email = data["email"] as? String,
+            let username = data["username"] as? String,
             let imageName = data["imageName"] as? String,
             let description = data["description"] as? String,
             let sex = data["sex"] as? String else { return nil }
