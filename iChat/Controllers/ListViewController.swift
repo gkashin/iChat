@@ -78,11 +78,6 @@ class ListViewController: UIViewController {
         activeChatsListener = ListenerService.shared.activeChatsObserve(chats: activeChats, completion: { result in
             switch result {
             case .success(let chats):
-                if self.activeChats != [], self.activeChats.count <= chats.count {
-                    let chatRequestVC = ChatRequestViewController(chat: chats.last!)
-                    chatRequestVC.delegate = self
-                    self.present(chatRequestVC, animated: true)
-                }
                 self.activeChats = chats
                 self.reloadData()
             case .failure(let error):
