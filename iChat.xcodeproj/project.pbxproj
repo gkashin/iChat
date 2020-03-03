@@ -42,6 +42,7 @@
 		5B82565423FDAAE900A4B219 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82565323FDAAE900A4B219 /* UIColor+Extension.swift */; };
 		5B82565623FDACD200A4B219 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82565523FDACD200A4B219 /* UILabel+Extension.swift */; };
 		5B82565823FDADAC00A4B219 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82565723FDADAC00A4B219 /* UIImageView+Extension.swift */; };
+		5B91A857240F0371005A23DB /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91A856240F0371005A23DB /* UIScrollView+Extension.swift */; };
 		5B91E91A240E94D8002BDFC6 /* MMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91E919240E94D8002BDFC6 /* MMessage.swift */; };
 		5B91E91C240EA6C2002BDFC6 /* WaitingChatsNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91E91B240EA6C2002BDFC6 /* WaitingChatsNavigation.swift */; };
 		5B979D3124098A9D008BADB3 /* AuthNavigatingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B979D3024098A9D008BADB3 /* AuthNavigatingDelegate.swift */; };
@@ -99,6 +100,7 @@
 		5B82565323FDAAE900A4B219 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		5B82565523FDACD200A4B219 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		5B82565723FDADAC00A4B219 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		5B91A856240F0371005A23DB /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		5B91E919240E94D8002BDFC6 /* MMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMessage.swift; sourceTree = "<group>"; };
 		5B91E91B240EA6C2002BDFC6 /* WaitingChatsNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatsNavigation.swift; sourceTree = "<group>"; };
 		5B979D3024098A9D008BADB3 /* AuthNavigatingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigatingDelegate.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				5B2F7801240D7F16007F03FD /* UIImage+Extension.swift */,
 				5B82565723FDADAC00A4B219 /* UIImageView+Extension.swift */,
 				5B82565523FDACD200A4B219 /* UILabel+Extension.swift */,
+				5B91A856240F0371005A23DB /* UIScrollView+Extension.swift */,
 				5BECC95F2404338200089FC0 /* UISegmentedControl+Extension.swift */,
 				5BB00DAF23FDB76D0043EC28 /* UIStackView+Extension.swift */,
 				5B5696982407F7F40053FD65 /* UIView+Extension.swift */,
@@ -496,6 +499,7 @@
 				5B56969B2407FDDC0053FD65 /* ChatRequestViewController.swift in Sources */,
 				5BF39859240E80D80056AE5D /* ListenerService.swift in Sources */,
 				5B82565023FDA7C200A4B219 /* UIButton+Extension.swift in Sources */,
+				5B91A857240F0371005A23DB /* UIScrollView+Extension.swift in Sources */,
 				5BECC95C24042B6300089FC0 /* SetupProfileViewController.swift in Sources */,
 				5B82565823FDADAC00A4B219 /* UIImageView+Extension.swift in Sources */,
 				5B5696992407F7F40053FD65 /* UIView+Extension.swift in Sources */,
