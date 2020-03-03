@@ -6,6 +6,7 @@
 //  Copyright © 2020 Georgii Kashin. All rights reserved.
 //
 
+import SDWebImage
 import UIKit
 
 class UserCell: UICollectionViewCell, SelfConfiguringCell {
@@ -35,10 +36,15 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell {
         containerView.clipsToBounds = true
     }
     
+    override func prepareForReuse() {
+        userImageView.image = nil
+    }
+    
     func configure<U>(with value: U) where U : Hashable {
         guard let user: MUser = value as? MUser else { return }
-        userImageView.image = UIImage(named: user.imageName)
         usernameLabel.text = user.username
+        guard let url = URL(string: user.imageName) else { return }
+        userImageView.sd_setImage(with: url, completed: nil)
     }
     
     private func setupConstraints() {
