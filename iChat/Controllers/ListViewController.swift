@@ -11,8 +11,8 @@ import UIKit
 class ListViewController: UIViewController {
     
     private let currentUser: MUser
-    let activeChats = [MChat]() // Bundle.main.decode([MChat].self, from: "activeChats.json")
-    let waitingChats = [MChat]() // Bundle.main.decode([MChat].self, from: "waitingChats.json")
+    let activeChats = [MChat]()
+    let waitingChats = [MChat]()
     
     enum Section: Int, CaseIterable {
         case waitingChats

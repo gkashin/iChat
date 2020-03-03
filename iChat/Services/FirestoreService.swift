@@ -14,6 +14,8 @@ class FirestoreService {
     static let shared = FirestoreService()
     let db = Firestore.firestore()
     
+    var currentUser: MUser!
+    
     private var usersRef: CollectionReference {
         return db.collection("users")
     }
@@ -27,6 +29,7 @@ class FirestoreService {
                 guard let muser = MUser(document: document) else {
                     return completion(.failure(UserError.cannotUnwrapToMUser))
                 }
+                self.currentUser = muser
                 completion(.success(muser))
             } else {
                 completion(.failure(UserError.cannotGetUserInfo))
@@ -58,6 +61,26 @@ class FirestoreService {
                 }
             case .failure(let error):
                 completion(.failure(error))
+            }
+        }
+    }
+    
+    func createWaitingChat(message: String, receiver: MUser, completion: @escaping (Result<Void, Error>) -> Void) {
+        let reference = db.collection(["users", receiver.id, "waitingChats"].joined(separator: "/"))
+        let messageRef = reference.document(self.currentUser.id).collection("messages")
+        
+        let message = MMessage(user: currentUser, content: message)
+        let chat = MChat(friendId: currentUser.id, friendUsername: currentUser.username, friendImageName: currentUser.imageName, lastMessageContent: message.content)
+        
+        reference.document(currentUser.id).setData(chat.representation) { error in
+            if let error = error {
+                return completion(.failure(error))
+            }
+            messageRef.addDocument(data: message.representation) { error in
+                if let error = error {
+                    return completion(.failure(error))
+                }
+                completion(.success(Void()))
             }
         }
     }

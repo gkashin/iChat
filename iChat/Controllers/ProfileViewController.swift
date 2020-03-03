@@ -6,6 +6,7 @@
 //  Copyright © 2020 Georgii Kashin. All rights reserved.
 //
 
+import SDWebImage
 import UIKit
 
 class ProfileViewController: UIViewController {
@@ -15,6 +16,20 @@ class ProfileViewController: UIViewController {
     let nameLabel = UILabel(text: "Jessica", font: .systemFont(ofSize: 20, weight: .light))
     let aboutMeLabel = UILabel(text: "You have the opportunity to chat with the best woman in the world!", font: .systemFont(ofSize: 16, weight: .light))
     let textField = InsertableTextField()
+    
+    private let user: MUser
+    
+    init(user: MUser) {
+        self.user = user
+        self.nameLabel.text = user.username
+        self.aboutMeLabel.text = user.description
+        self.imageView.sd_setImage(with: URL(string: user.imageName), completed: nil)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +56,19 @@ class ProfileViewController: UIViewController {
     }
     
     @objc private func sendMessage() {
-        print(#line, #function)
-    }
+        guard let message = textField.text, message != "" else { return }
+        
+        self.dismiss(animated: true) {
+            FirestoreService.shared.createWaitingChat(message: message, receiver: self.user) { result in
+                switch result {
+                case .success:
+                    UIApplication.getTopViewController()?.showAlert(with: "Success!", and: "Your message to \(self.user.username) has been sent.")
+                case .failure(let error):
+                    UIApplication.getTopViewController()?.showAlert(with: "Error!", and: error.localizedDescription)
+                }
+            }
+        }
+    } 
 }
 
 // MARK: - Setup Constraints
@@ -86,26 +112,5 @@ extension ProfileViewController {
             textField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
             textField.heightAnchor.constraint(equalToConstant: 48)
         ])
-    }
-}
-
-// MARK: - SwiftUI
-import SwiftUI
-
-struct ProfileVCProvider: PreviewProvider {
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        let profileVC = ProfileViewController()
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<ProfileVCProvider.ContainerView>) -> ProfileViewController {
-            return profileVC
-        }
-        
-        func updateUIViewController(_ uiViewController: ProfileVCProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ProfileVCProvider.ContainerView>) {
-            
-        }
     }
 }
