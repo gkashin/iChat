@@ -6,13 +6,17 @@
 //  Copyright © 2020 Georgii Kashin. All rights reserved.
 //
 
+import FirebaseFirestore
 import UIKit
 
 class ListViewController: UIViewController {
     
     private let currentUser: MUser
-    let activeChats = [MChat]()
-    let waitingChats = [MChat]()
+    var activeChats = [MChat]()
+    var waitingChats = [MChat]()
+    
+    private var waitingChatsListener: ListenerRegistration?
+    private var activeChatsListener: ListenerRegistration?
     
     enum Section: Int, CaseIterable {
         case waitingChats
@@ -41,6 +45,11 @@ class ListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        waitingChatsListener?.remove()
+        activeChatsListener?.remove()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +59,36 @@ class ListViewController: UIViewController {
         
         createDataSource()
         reloadData()
+        
+        waitingChatsListener = ListenerService.shared.waitingChatsObserve(chats: waitingChats, completion: { result in
+            switch result {
+            case .success(let chats):
+                if self.waitingChats != [], self.waitingChats.count <= chats.count {
+                    let chatRequestVC = ChatRequestViewController(chat: chats.last!)
+                    chatRequestVC.delegate = self
+                    self.present(chatRequestVC, animated: true)
+                }
+                self.waitingChats = chats
+                self.reloadData()
+            case .failure(let error):
+                self.showAlert(with: "Error!", and: error.localizedDescription)
+            }
+        })
+        
+        activeChatsListener = ListenerService.shared.activeChatsObserve(chats: activeChats, completion: { result in
+            switch result {
+            case .success(let chats):
+                if self.activeChats != [], self.activeChats.count <= chats.count {
+                    let chatRequestVC = ChatRequestViewController(chat: chats.last!)
+                    chatRequestVC.delegate = self
+                    self.present(chatRequestVC, animated: true)
+                }
+                self.activeChats = chats
+                self.reloadData()
+            case .failure(let error):
+                self.showAlert(with: "Error!", and: error.localizedDescription)
+            }
+        })
     }
     
     private func setupSearchBar() {
@@ -76,6 +115,8 @@ class ListViewController: UIViewController {
         
         collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reuseId)
         collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reuseId)
+        
+        collectionView.delegate = self
     }
     
     private func reloadData() {
@@ -188,6 +229,47 @@ extension ListViewController {
 extension ListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension ListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let chat = self.dataSource?.itemIdentifier(for: indexPath) else { return }
+        guard let section = Section(rawValue: indexPath.section) else { return }
+        
+        switch section {
+        case .activeChats:
+            print(indexPath)
+        case .waitingChats:
+            let chatRequestVC = ChatRequestViewController(chat: chat)
+            chatRequestVC.delegate = self
+            self.present(chatRequestVC, animated: true)
+        }
+    }
+}
+
+extension ListViewController: WaitingChatsNavigation {
+    func removeWaitingChat(chat: MChat) {
+        FirestoreService.shared.deleteWaitingChat(chat: chat) { result in
+            switch result {
+            case .success:
+                self.showAlert(with: "Success!", and: "Chat with \(chat.friendUsername) has been deleted")
+            case .failure(let error):
+                self.showAlert(with: "Error!", and: error.localizedDescription)
+            }
+        }
+    }
+    
+    func changeToActive(chat: MChat) {
+        FirestoreService.shared.changeToActive(chat: chat) { result in
+            switch result {
+            case .success:
+                self.showAlert(with: "Success!", and: "Have a nice chat with \(chat.friendUsername)")
+            case .failure(let error):
+                self.showAlert(with: "Error!", and: error.localizedDescription)
+            }
+        }
     }
 }
 
