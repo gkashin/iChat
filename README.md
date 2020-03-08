@@ -1,5 +1,5 @@
 # iChat
-Online chat using ***Firebase*** for authentication and ***MessageKit*** for chatting
+Online chat using ***[Firebase](https://firebase.google.com)*** for authentication and ***[MessageKit](https://github.com/MessageKit/MessageKit)*** for chatting
 
 ## Sneak Peek
 Authentication        |  Login
