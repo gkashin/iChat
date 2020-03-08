@@ -15,7 +15,7 @@ Chat Request          |  Online Chat
 ![](https://d.radikal.ru/d41/2003/43/5dc74a531f7a.png) | ![](https://b.radikal.ru/b01/2003/76/1dd8ff22d89d.png)
 
 ## Getting Started
-* Init Podfile:
+* Initialize Podfile:
 ```
 pod init
 open Podfile
