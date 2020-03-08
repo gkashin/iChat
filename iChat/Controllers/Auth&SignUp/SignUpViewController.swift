@@ -17,9 +17,9 @@ class SignUpViewController: UIViewController {
     let confirmPasswordLabel = UILabel(text: "Confirm password")
     let alreadyOnBoardLabel = UILabel(text: "Already onboard?")
     
-    let emailTextField = OneLineTextField()
-    let passwordTextField = OneLineTextField()
-    let confirmPasswordTextField = OneLineTextField()
+    let emailTextField = OneLineTextField(font: .avenir20())
+    let passwordTextField = OneLineTextField(font: .avenir20())
+    let confirmPasswordTextField = OneLineTextField(font: .avenir20())
     
     let signUpButton = UIButton(title: "Sign Up", backgroundColor: .buttonDark(), titleColor: .white, isShadow: false)
     let loginButton: UIButton = {

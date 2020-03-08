@@ -6,7 +6,7 @@
 //  Copyright © 2020 Georgii Kashin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIScrollView {
     

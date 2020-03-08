@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     let loginButton = UIButton(title: "Login", backgroundColor: .buttonDark(), titleColor: .white, isShadow: false)
     let signUpButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Sign Up ", for: .normal)
+        button.setTitle("Sign Up", for: .normal)
         button.setTitleColor(.buttonRed(), for: .normal)
         button.titleLabel?.font = .avenir20()
         
@@ -32,8 +32,8 @@ class LoginViewController: UIViewController {
     
     weak var delegate: AuthNavigatingDelegate?
     
-    let emailTextField = OneLineTextField()
-    let passwordTextField = OneLineTextField()
+    let emailTextField = OneLineTextField(font: .avenir20())
+    let passwordTextField = OneLineTextField(font: .avenir20())
     
     override func viewDidLoad() {
         super.viewDidLoad()
